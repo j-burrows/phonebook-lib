@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0A502A4D-85EB-45E5-9F2D-FA89FB4EE79F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PhoneBookLib</RootNamespace>
+    <AssemblyName>PhoneBookLib</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MySql.Data, Version=6.7.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Repository5\Repository\bin\Release\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data.Entity, Version=6.6.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Repository5\Repository\bin\Release\MySql.Data.Entity.dll</HintPath>
+    </Reference>
+    <Reference Include="Repository, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Repository5\Repository\bin\Release\Repository.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\Address.cs" />
+    <Compile Include="Base\Contact.cs" />
+    <Compile Include="Base\Country.cs" />
+    <Compile Include="Base\Email.cs" />
+    <Compile Include="Base\PhoneAddress.cs" />
+    <Compile Include="Base\Place.cs" />
+    <Compile Include="Base\State.cs" />
+    <Compile Include="Business\BAddress.cs" />
+    <Compile Include="Business\BContact.cs" />
+    <Compile Include="Business\BCountry.cs" />
+    <Compile Include="Business\BEmail.cs" />
+    <Compile Include="Business\BPhoneAddress.cs" />
+    <Compile Include="Business\BPlace.cs" />
+    <Compile Include="Business\BState.cs" />
+    <Compile Include="Data\Entities\DAddress.cs" />
+    <Compile Include="Data\Entities\DContact.cs" />
+    <Compile Include="Data\Entities\DCountry.cs" />
+    <Compile Include="Data\Entities\DEmail.cs" />
+    <Compile Include="Data\Entities\DPhoneAddress.cs" />
+    <Compile Include="Data\Entities\DPlace.cs" />
+    <Compile Include="Data\Entities\DState.cs" />
+    <Compile Include="Data\Repositories\SqlSAddressRepository.cs" />
+    <Compile Include="Data\Repositories\SqlSContactRepository.cs" />
+    <Compile Include="Data\Repositories\SqlSCountryRepository.cs" />
+    <Compile Include="Data\Repositories\SqlSEmailRepository.cs" />
+    <Compile Include="Data\Repositories\SqlSPhoneAddressRepository.cs" />
+    <Compile Include="Data\Repositories\SqlSPlaceRepository.cs" />
+    <Compile Include="Data\Repositories\SqlSStateRepository.cs" />
+    <Compile Include="Factory\MySqlRepositoryFactory.cs" />
+    <Compile Include="Factory\RepositoryFactory.cs" />
+    <Compile Include="Factory\SqlSRepositoryFactory.cs" />
+    <Compile Include="IPhonebookService.cs" />
+    <Compile Include="PhonebookService.cs" />
+    <Compile Include="Presentation\PAddress.cs" />
+    <Compile Include="Presentation\PContact.cs" />
+    <Compile Include="Presentation\PCountry.cs" />
+    <Compile Include="Presentation\PEmail.cs" />
+    <Compile Include="Presentation\PPhoneAddress.cs" />
+    <Compile Include="Presentation\PPlace.cs" />
+    <Compile Include="Presentation\PState.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
